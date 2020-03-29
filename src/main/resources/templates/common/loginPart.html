@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul th:if="${session.sessionUser} != null" class="nav_ul_right" th:fragment="isLogin">
+		<li class="li_1_1"><a id="userExit" th:href="@{/userExit}">退出</a></li>
+		<li><a th:href="@{/queryOrder}">我的订单 ></a></li>
+		<li class="li_2_2"><span>欢迎您：&nbsp;[[${session.sessionUser.username}]]</span></li>
+	</ul>
+	<ul th:if ="${session.sessionUser} == null" class="nav_ul_right" th:fragment="noLogin">
+		<li><a th:href="@{/login.html}">登录/注册</a></li>
+		<li class="li_2"><i></i></li>
+	</ul>
+</body>
+</html>

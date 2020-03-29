@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>用户注册</title>
+<!-- 头部尾部 -->
+<link rel="stylesheet" th:href="@{css/base.css}">
+<!-- 注册界面美化样式 -->
+<link rel="stylesheet" th:href="@{css/regist.css}">
+
+<!-- 这里是验证码 -->
+<script type="text/javascript">
+	//请求函数，并给地址加一个时间参数，解决浏览器缓存问题
+	window.onload = function (){
+		document.getElementById("vCodeImg").onclick = function (){
+			this.setAttribute("src","/verifyCodeSrc?time="+new Date().getTime()+")");
+		}
+	}
+</script>
+</head>
+<body>
+	<!-- 注册页面头部开始 -->
+	<div class="nav clearfix">
+		<a th:href="@{index.thml}" title="快递联盟" class="logo">快递联盟</a>
+		<!-- 导航栏公共部分引入 -->
+		<div th:replace="~{common/nav::nav}"></div>
+	</div>	
+	<!-- 注册页面头部结束 -->
+	
+	
+	<!-- 中间内容部分部分开始 -->
+	<div class="inner_regist">
+		<div class="inner_box">
+			<span>账号注册</span>
+			<form class="inner_form" th:action="@{/userRegist}" method="post">
+				<span>账号：</span><input type="text" placeholder="请输入1~6位账号" 
+				maxlength="40" name="username" th:value="${user != null ? user.username:''}">
+				<p th:text="${username != null?username:''}"></p><br >
+				<span>设置密码：</span><input type="password" placeholder="请输入6~12位密码" 
+				maxlength="40" name="password" id="input_2" th:value="${user != null ? user.password:'' }"><span id="span_3"></span>
+				<p th:text="${password != null?password:''}"></p><br />
+				<span>确认密码：</span><input type="password" placeholder="确认密码" 
+				maxlength="40" name="repassword">
+				<p th:text="${repassword != null?repassword:''}"></p><br />
+				<span>验证码：</span><input type="text" placeholder="请输入验证码" maxlength="4" name="verifyCode"
+				 class="input_4">
+				 <img id="vCodeImg" th:src="@{/verifyCodeSrc}">
+				 <p th:text="${verifyCode != null?verifyCode:''}"></p><br />
+				<p id="p_1" th:text="${msg != null?msg:''}"></p><br />
+				<button>马上注册</button><br />
+				<span class="span_5">已有账号，<a th:href="@{/login.html}">点击登录</a></span>
+			</form>
+		</div>
+	</div>
+		<!-- <script src="js/registAjax.js"></script> -->
+		<!-- 点击小眼睛查看密码 -->
+		<script th:src="@{/js/yanjing.js}"></script>
+		<!-- 给input添加键盘抬起事件，动态获取input的参数值  -->
+		<script th:src="@{/js/inputkeyup.js}"> </script>
+		
+	<!-- 中间内容部分部分开始 -->
+		
+		
+	<!-- 尾部版权部分开始 -->
+	<div class="copyright">
+		<div class="copyright_top">
+			湖南信息学院 Copyright &copy;2019-2020.All Rights Reserved.
+		</div>
+		<div class="copyright_bottom">16物联网本一班毕业设计</div>
+	</div>
+	<!-- 尾部版权部分结束 -->
+</body>
+</html>

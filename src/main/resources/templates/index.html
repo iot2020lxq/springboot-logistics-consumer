@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>快递联盟 - 快递代取、寄件、物流查询</title>
+<!-- 公共样式，主要是网页顶部和尾部 -->
+<link rel="stylesheet" th:href="@{/css/base.css}" />
+<!-- 首页样式 -->
+<link rel="stylesheet" th:href="@{/css/index.css}" />
+<!-- 插入图标 -->
+<link rel="shortuct icon" href="favicon.ico" />
+</head>
+<body>
+	<!-- 导航栏开始 -->
+	<div class="nav clearfix">
+		<a th:href="@{/index.html}" title="快递联盟" class="logo">快递联盟</a>
+		
+		<!-- 导航栏公共部分引入 -->
+		<div th:replace="~{common/nav::nav}"></div>
+		
+		<!-- 道路导航栏登录部分 -->
+		<div th:replace="~{common/loginPart::isLogin}"></div>
+		<div th:replace="~{common/loginPart::noLogin}"></div>
+		
+	</div>
+		<!-- 点击退出弹出对话框 -->
+		<script>
+			document.getElementById("userExit").onclick = function(){
+				var flag = window.confirm("是否确定退出？");
+				if(flag==false){
+					this.setAttribute("href","false");
+					return false;
+				}else{
+					this.setAttribute("href","/userExit");
+				}
+			}
+		</script>
+	<!-- 导航栏结束 -->
+		
+	
+	<!-- 轮播图开始 -->
+	<div id="box" class="dv_1">
+		<ul>
+			<li><a th:href="@{/index.html}"><img src="images/img_1.jpg"></a></li>
+			<li><a th:href="@{/index.html}"><img src="images/img_2.jpg"></a></li>
+			<li><a th:href="@{/index.html}"><img src="images/img_3.jpg"></a></li>
+		</ul>
+		<ol>	
+			<li class="current" id="searchId"></li>
+			<li></li>
+			<li></li>
+		</ol>
+		<div id="focus">
+			<span id="left" class="btn_l">&lt;</span>
+			<span id="right" class="btn_r">&gt;</span>
+		</div>
+	</div>
+	<script th:src="@{/js/common.js}"></script>
+	<script th:src="@{/js/rollbackpicture.js}"></script>
+	<!-- 轮播图结束 -->
+	
+	<!-- 运单号查询部分开始 -->
+	<div class="inner">
+		<div class="search_header">
+			<div>
+				<span>运</span>
+				<span>单</span>
+				<span>追</span>
+				<span>踪</span>
+			</div>
+		</div>
+		<div class="search">
+			<div>
+				<div>
+					<select class="select_search" id="search_select">
+						<option selected="selected" value="SF">顺丰快递</option>
+						<option value="YAPY">邮政快递</option>
+						<option value="ZTO">中通快递</option>
+					</select><br />
+					<input type="text" placeholder="输入运输单号可查询" id="search_input"><br />
+					<button id="button_query">马上查询</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		<!-- 这里显示物流信息 -->
+		<div class="showlogistics" id="message">
+			
+		</div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/querylogistics.js"></script>
+	<!-- 运单号查询结束 -->
+	
+	<!-- Content开始 -->
+	<span class="white"></span>
+	<div class="content"> 	
+		<h1 class="title">用心服务</h1>
+		<div class="text">第四方“最后一公里”物流配送，心中有情，客户有心，回馈客户，从我做起</div>
+		<div class="service"><a th:href="@{/take.html}"><i></i>快递代取</a></div>
+	</div>
+	<span class="gray">
+	</span>	
+	<!-- Content结束 -->
+	
+	
+	<!-- 尾部版权部分开始 -->
+	<div class="copyright">
+		<div class="copyright_top">
+			湖南信息学院 Copyright &copy;2019-2020.All Rights Reserved.
+		</div>
+		<div class="copyright_bottom">16物联网本一班毕业设计</div>
+	</div>
+	<!-- 尾部版权部分结束 -->	
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>寄出快递</title>
+<link rel="stylesheet" th:href="@{/css/base.css}">
+<link rel="stylesheet" th:href="@{/css/take.css}">
+<link rel="stylesheet" th:href="@{/css/success.css}">
+</head>
+<body>
+	<!-- 导航栏开始 -->
+	<div class="nav clearfix">
+		<a th:href="@{/index.html}" title="快递联盟" class="logo">快递联盟</a>
+		
+		<!-- 导航栏公共部分引入 -->
+		<div th:replace="~{common/nav::nav}"></div>	
+		
+		<!-- 道路导航栏登录部分 -->
+		<div th:replace="~{common/loginPart::isLogin}"></div>
+		<div th:replace="~{common/loginPart::noLogin}"></div>	
+	</div>
+	<!-- 导航栏结束 -->
+	
+	<!-- 快递代取content部分开始 -->
+	<div class="inner_box" id="box">
+		<p class="inner_header" style="background-color: #f10215">
+			<span>寄</span>
+			<span>出</span>
+			<span>快</span>
+			<span>递</span>
+		</p>
+		<div class="inner_content">
+			<ul class="content_ul" id="ul">
+				<li>
+					<p>01</p>
+					<i></i><br />
+					<span>寄件人信息</span>
+				</li>
+				<li>
+					<p>02</p>
+					<i></i><br />
+					<span>收件人信息</span>
+				</li>
+				<li>
+					<p>03</p>
+					<i></i><br />
+					<span>订单支付</span>
+				</li>
+				<li>
+					<p class="current_p">04</p>
+					<i class="current_i"></i><br />
+					<span class="current_span">支付完成</span>
+				</li>
+			</ul>
+			<div class="inner_form_box" id="box">
+				<div class="form_float" id="div_form">
+				
+				<!-- 完成订单部分 -->
+				<form action="" class="inner_form" id="form_4" method="post">
+					<p class="success">
+						<i></i>&nbsp;&nbsp;
+						<label class="success">支付成功！</label>
+						<a th:href="@{/queryOrder}" class="look">查看我的订单</a>
+					</p>	
+					<a href="@{/send.html}">确定</a>	
+				</form>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div class="red"></div>
+	<!-- 快递代取content部分结束 -->
+		
+	<!-- 尾部版权部分开始 -->
+	<div class="copyright">
+		<div class="copyright_top">
+			湖南信息学院 Copyright &copy;2019-2020.All Rights Reserved.
+		</div>
+		<div class="copyright_bottom">16物联网本一班毕业设计</div>
+	</div>
+	<!-- 尾部版权部分结束 -->	
+	
+</body>
+</html>

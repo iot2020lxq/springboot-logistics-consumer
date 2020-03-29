@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>我的订单</title>
+<link rel="stylesheet" th:href="@{/css/base.css}" />
+<link rel="stylesheet" th:href="@{/css/order.css}" />
+</head>
+<body>
+	<!-- 导航栏开始 -->
+	<div class="nav_box" style="background-color: #ffffff">
+		<div class="nav clearfix">
+			<a th:href="@{/index.html}" title="快递联盟" class="logo">快递联盟</a>
+			
+			<!-- 导航栏公共部分引入 -->
+			<div th:replace="~{common/nav::nav}"></div>	
+			
+			<!-- 道路导航栏登录部分 -->
+			<div th:replace="~{common/loginPart::isLogin}"></div>
+			<div th:replace="~{common/loginPart::noLogin}"></div>	
+		</div>
+	</div>
+	<!-- 导航栏结束 -->
+	
+	<!-- 订单信息部分开始 -->
+	<div class="bd">
+		<div class="box">
+			<span id="take" class="current">快递代取</span>
+			<span id="send" >寄出快递</span><br>
+				<div id="div_t"  class="show">
+					<table id="table_t" th:each="takeItem:${takeList}">
+						<tr>
+							<td>备注</td>
+							<td>[[${takeItem.t_msg}]]</td>
+						</tr>
+						<tr>
+							<td width="100px">快递代取</td>
+							<td width="300px">[[${takeItem.t_address}]]</td>
+						</tr>
+						<tr>
+							<td>收件人</td>
+							<td>[[${takeItem.t_name}]]</td>
+						</tr>
+						<tr>
+							<td>电话号码</td>
+							<td>[[${takeItem.t_uNumber}]]</td>
+						</tr>
+						<tr>
+							<td>收件点</td>
+							<td>[[${takeItem.t_uAddress}]][[${takeItem.t_street}]]</td>
+						</tr>
+						<tr>
+							<td>取货号</td>
+							<td>[[${takeItem.t_number}]]</td>
+						</tr>
+						<tr>
+							<td>订单编号</td>
+							<td  id="tid">[[${takeItem.tid}]]</td>
+						</tr>
+						<tr>
+							<td>创建时间</td>
+							<td>[[${takeItem.t_date}]]</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td align="right"><i></i></td>
+						</tr>
+					</table>
+				</div>
+			
+			<div id="div_s">
+				<table id="table_s" th:each="sendItem:${sendList}">
+					<tr>
+						<td>快递商</td>
+						<td>[[${sendItem.s_company}]]</td>
+					</tr>
+					<tr>
+						<td width="100px">寄件人</td>
+						<td width="300px">[[${sendItem.s_mName}]]</td>
+					</tr>
+					<tr>
+						<td>寄件人号码</td>
+						<td>[[${sendItem.s_mNumber}]]</td>
+					</tr>
+					<tr>
+						<td>寄件人地址</td>
+						<td>[[${sendItem.s_mAddress}]][[${sendItem.s_mStreet}]]</td>
+					</tr>
+					<tr>
+						<td>收件人</td>
+						<td>[[${sendItem.s_uName}]]</td>
+					</tr>
+					<tr>
+						<td>收件人号码</td>
+						<td>[[${sendItem.s_uNumber}]]</td>
+					</tr>
+					<tr>
+						<td>收件人地址</td>
+						<td>[[${sendItem.s_uAddress}]][[${sendItem.s_uStreet}]]</td>
+					</tr>
+					<tr>
+						<td>订单编码</td>
+						<td>[[${sendItem.sid}]]</td>
+					</tr>
+					<tr>
+						<td>创建时间</td>
+						<td>[[${sendItem.s_date}]]</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td align="right"><a></a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script th:src="@{/js/common.js}"></script>
+	<script th:src="@{/js/jquery-3.4.1.js}"></script>
+	<script th:src="@{/js/order.js}"></script>
+	<!-- 订单信息部分结束 -->
+</body>
+</html>

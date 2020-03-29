@@ -1,0 +1,242 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ly72b1');
+  src:  url('../fonts/icomoon.eot?ly72b1#iefix') format('embedded-opentype'),
+   		url('../fonts/icomoon.ttf?ly72b1') format('truetype'),
+   		url('../fonts/icomoon.woff?ly72b1') format('woff'),
+   	 	url('../fonts/icomoon.svg?ly72b1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.inner_box{
+	width: 100%;
+	height: 900px;
+	background-color: #F2F2F2;
+}
+
+.inner_header{
+	height: 70px;
+	line-height: 70px;
+	background-color: #333333;
+	text-align: center;
+}
+
+.inner_header span{
+	display: inline-block;
+	color: #FFFFFF;
+	font-size: 20px;
+	margin: 0 10px;
+}
+
+.inner_content{
+	width: 960px;
+	height: 750px;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	overflow: hidden;
+	padding-left: 80px;
+	box-sizing: border-box;
+}
+
+.content_ul{
+	overflow: hidden;
+	margin-top: 45px;
+}
+
+.inner_content li{
+	float: left;
+	width: 120px;
+	height: 90px;
+	margin-bottom: 10px;
+}
+.inner_content li p{
+	display: block;
+	font-size: 36px;
+	color: #CCCCCC;
+	height: 54px;
+	line-height: 54px;
+}
+
+.inner_content li i{
+	display: inline-block;
+	width: 105px;
+	height: 1px;
+	border: 1px solid #CCCCCC;
+	background-color: #CCCCCC;
+	margin: 4px 0;
+}
+
+.inner_content li span{
+	font-size: 13px;
+	color: #CCCCCC;
+}
+.inner_content li p.current_p{
+	font-size: 45px;
+	color: #DC1E32;
+}
+.inner_content li i.current_i{
+	border: 1px solid #DC1E32;
+	background-color: #DC1E32;
+}
+.inner_content li span.current_span{
+	color: #DC1E32;
+}
+/* 快递代取部分 */
+/* 我的地址部分 */
+.inner_form_box{
+	width: 800px;
+	height: 540px;
+	overflow: hidden;
+	position: relative;
+}
+
+.form_float{
+	width: 3200px;
+	height: 540px;
+	/* position: absolute;
+	left: 0;
+	top: 0; */
+	position: relative;
+}
+
+.inner_form_box .btn,.inner_form_box .btn_{
+	position: absolute;
+	left: 570px;
+	bottom: 0;
+	width: 230px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 50px;
+	color: #ffffff;
+	background-color: #DE2235;
+	z-index: 2;
+}
+
+.inner_form_box .btn_{
+	background-color: #cccccc;
+	left: 0;
+	bottom: 0;
+	display: block;
+}
+.inner_form_box div.current {
+	display: none;
+}
+
+.inner_form{
+	width: 800px;
+	height: 540px;
+	/* width: 798px;
+	height: 538px;
+	border: 1px solid red; */
+	position: relative;
+	float: left;	
+} 
+
+.inner_form div{
+	overflow: hidden;
+	height: 90px;
+}
+
+.inner_form span{
+	display: inline-block;
+	color: #757575;
+	font-size: 14px;
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
+
+.inner_form input{
+	outline: none;
+	border-bottom: 1px solid #cccccc;
+	width: 300px;
+	height: 30px;
+}
+.inner_form input:focus{
+	border-bottom: 2px #EB1D21 solid;
+}
+
+.inner_form textarea{
+	width: 300px;
+	height: 150px;
+	outline: none;
+	resize: none;
+}
+.inner_form div.btn_{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 230px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 50px;
+	color: #ffffff;
+	background-color: #DE2235;
+}
+
+.btn:hover{
+	background-color: #f10215!important;
+}
+.btn_:hover{
+	background-color: #bbbbbb!important;
+}
+
+/* 订单支付 */
+.inner_form .price{
+	width: 100px;
+	height: 100px;
+	border-bottom: 2px solid red;
+	background-color: #FBF9F9;
+	margin: 30px 200px;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding: 10px 0 0 10px;
+}
+.price i{
+	font: 13px icomoon;
+	color: #F10215;
+}
+.price .p_1{
+	display: block;
+	color: #ccc;
+	font-size: 13px;
+}
+.price .p_2{
+	display: inline-block;
+	color: red;
+	font-size: 26px;
+	font-weight: 50;
+	margin-left: 5px;
+}
+
+hr{
+	margin-top: 110px;
+}
+
+.inner_form>a{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 230px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 50px;
+	color: #ffffff;
+	background-color: #DE2235;
+}
+
+
+.red{
+	width: 100%;
+	height: 5px;
+	background-color: #DC1E32;
+}
+

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul class="nav_ul_left" th:fragment="nav">
+		<li><a th:href="@{/index.html}">首页</a></li>
+		<li><a th:href="@{/take.html}">代取快递</a></li>
+		<li><a th:href="@{send.html}">寄出快递</a></li>
+		<li><a href="#searchId">查询快递</a></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,133 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ly72b1');
+  src:  url('../fonts/icomoon.eot?ly72b1#iefix') format('embedded-opentype'),
+   		url('../fonts/icomoon.ttf?ly72b1') format('truetype'),
+   		url('../fonts/icomoon.woff?ly72b1') format('woff'),
+   	 	url('../fonts/icomoon.svg?ly72b1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.clearfix:after, .clearfix:before {
+	content: "";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+input,button{
+	padding: 0;
+	border: 0;
+}
+
+img {
+	vertical-align: top;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 导航栏部分 */
+.nav {
+	height: 70px;
+	margin: 0 40px;
+}
+
+.logo {
+	float: left;
+	width: 44px;
+	height: 44px;
+	background: url("../images/logo.jpg") no-repeat;
+	margin-top: 13px;
+	margin-right: 20px;
+	text-indent: -666em;
+}
+
+.nav_ul_left {
+	float: left;
+}
+.nav_ul_right {
+	float: right;
+}
+.nav_ul_left li a, .nav_ul_right li a {
+	display: inline-block;
+	font-size: 14px;
+	height: 68px;
+	line-height: 68px;
+	margin: 0 20px;
+	color: #000000;
+}
+.nav_ul_right li a{
+	margin-left: 5px;
+}
+.nav_ul_left li {
+	float: left;
+}
+
+.nav_ul_right li {
+	float: right;
+	margin-right: 20px;
+}
+.nav_ul_right .li_2{
+	margin-right: 0;
+}
+.nav_ul_right .li_1_1{
+	margin-right: -10px;
+}
+.nav_ul_right .li_2_2{
+	height: 68px;
+	line-height: 68px;
+	font-size: 14px;
+	margin-right: 40px;
+}
+
+.nav_ul_right li i {
+	font: 14px icomoon ;
+	height: 68px;
+	line-height: 68px;
+}
+
+.nav_ul_left li a:hover{
+	color: #F10215;
+	border-bottom: 2px #F10215 solid;
+}
+.nav_ul_right li a:hover{
+	color: #F10215;
+}
+
+/* 尾部版权部分 */
+.copyright{
+	height: 170px;
+	background-color: #2F343B;
+	overflow: hidden;
+}
+.copyright_top,.copyright_bottom{
+	margin: 55px 55px 0 55px;
+	width: 1239px;
+	height: 30px;
+	font-size: 13px;
+	line-height: 30px;
+	color: #999;
+	text-align: center;
+}
+.copyright_bottom{
+	margin: 0 55px;;
+}

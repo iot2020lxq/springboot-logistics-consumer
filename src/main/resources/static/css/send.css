@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.inner_form_send .send_1{
+	display: inline-block;
+}
+.inner_form_send .send_2{
+	display: inline-block;
+	margin-left: 150px;
+}

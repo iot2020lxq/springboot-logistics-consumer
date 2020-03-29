@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>寄出快递</title>
+<link rel="stylesheet" th:href="@{/css/base.css}">
+<link rel="stylesheet" th:href="@{/css/take.css}">
+<link rel="stylesheet" th:href="@{/css/send.css}">
+</head>
+<body>
+	<!-- 导航栏开始 -->
+	<div class="nav clearfix">
+		<a th:href="@{/index.html}" title="快递联盟" class="logo">快递联盟</a>
+		
+		<!-- 导航栏公共部分引入 -->
+		<div th:replace="~{common/nav::nav}"></div>	
+		
+		<!-- 道路导航栏登录部分 -->
+		<div th:replace="~{common/loginPart::isLogin}"></div>
+		<div th:replace="~{common/loginPart::noLogin}"></div>	
+	</div>
+	<!-- 导航栏结束 -->
+	
+	<!-- 快递代取content部分开始 -->
+	<div class="inner_box" id="box">
+		<p class="inner_header" style="background-color: #f10215">
+			<span>寄</span>
+			<span>出</span>
+			<span>快</span>
+			<span>递</span>
+		</p>
+		<div class="inner_content">
+			<ul class="content_ul" id="ul">
+				<li>
+					<p class="current_p">01</p>
+					<i  class="current_i"></i><br />
+					<span class="current_span">寄件人信息</span>
+				</li>
+				<li>
+					<p>02</p>
+					<i></i><br />
+					<span>收件人信息</span>
+				</li>
+				<li>
+					<p>03</p>
+					<i></i><br />
+					<span>订单支付</span>
+				</li>
+				<li>
+					<p>04</p>
+					<i></i><br />
+					<span>支付完成</span>
+				</li>
+			</ul>
+			<div class="inner_form_box" id="box">
+				<div class="form_float" id="div_form">
+				<!-- 寄件人信息部分 -->
+				<form action="" class="inner_form" id="form_1">
+					<div class="inner_form_send">
+						<div class="send_1">
+							<span>姓名</span><br />
+							<input type="text" placeholder="请输入联系人名称"  id="s_mName">
+						</div>
+						<div class="send_2">
+							<span>快递商</span><br />
+							<input type="text" placeholder="请填写您需寄件的快递商名称" id="s_company">
+						</div>
+					</div>
+					<div>
+						<span>手机号</span><br />
+						<input type="text" placeholder="请填写手机号码" id="s_mNumber">
+					</div>
+					<div>
+						<span>当前住址</span><br />
+						<input type="text" placeholder="如湖南信息学院 / 新东方" id="s_mAddress">
+					</div>				
+					<div>
+						<span>详细住址</span><br />
+						<input type="text" placeholder="所在楼栋/宿舍" id="s_mStreet">
+					</div>	
+				</form>
+				
+				<!-- 收件人信息部分 -->
+				<form action="" class="inner_form" id="form_2">
+					<div>
+						<span>姓名</span><br />
+						<input type="text" placeholder="请输入联系人名称" id="s_uName">
+					</div>
+					<div>
+						<span>手机号码</span><br />
+						<input type="text" placeholder="请输入联系人手机号" id="s_uNumber">
+					</div>
+					<div>
+						<span>省市</span><br />
+						<input type="text" placeholder="所在地区，如：湖南省-长沙市-长沙县" id="s_uAddress">
+					</div>
+					<div>
+						<span>详细地址</span><br />
+						<input type="text" placeholder="所在街道以及详细地址" id="s_uStreet">
+					</div>	
+				</form>
+				
+				<!-- 支付订单部分 -->
+				<form action="" class="inner_form" id="form_3">		
+					<span style="color:#DD5145;font-weight: 700;font-size: 15px;margin-top: 50px;margin-left: 200px;">寄出快递</span>
+  					&nbsp;&nbsp;&nbsp;<span style="color:#000;font-weight: 700;font-size: 15px;" id="company"></span><br />
+					<span style="font-size: 14px;margin-top: 5px;margin-left: 200px;" id="mName"></span>&nbsp;&nbsp;&nbsp;
+					<span style="color:#2189FF;font-size: 14px;margin-top: 5px;" id="mPhone" ></span><br />
+					<span style="font-size: 14px;margin-top: 5px;margin-left: 200px;" id="mAddress"></span>
+					<span style="font-size: 14px;margin-top: 5px;" id="mStreet"></span><br />
+					<span style="color:#DD5145;font-weight: 700;font-size: 15px;margin-left: 200px;">收件人：</span><br />
+					<span style="font-size: 14px;margin-top: 5px;margin-left: 200px;" id="uName"></span>&nbsp;&nbsp;&nbsp;
+					<span style="color:#2189FF;font-size: 14px;margin-top: 5px;" id="uPhone"></span><br />
+					<span style="font-size: 14px;margin-top: 5px;margin-left: 200px;" id="uAddress"></span>
+					<span style="font-size: 14px;margin-top: 5px;" id="uStreet"></span>
+					
+					<div class="price">
+						<p class="p_1">*价格</p><br />
+						<p class="p_2">0.01&nbsp;</p><i></i>
+					</div>
+					<a id="subMit" th:href="@{/sendToZhiFu}">去支付</a>	
+					
+					<script th:if="${biubiu} != null">
+						alert("您还没有登录！");
+					</script>
+				</form>
+				</div>
+				<div class="btn_ current" id="btn_l">上一步</div>
+				<div class="btn" id="btn_r">下一步</div>
+			</div>
+		</div>	
+	</div>
+	<div class="red"></div>
+	<script th:src="@{/js/jquery-3.4.1.js}"></script>
+	<script th:src="@{/js/common.js}"></script>
+	<script th:src="@{/js/animate.js}"></script>
+	<script th:src="@{/js/send.js}"></script>
+	<!-- 快递代取content部分结束 -->
+	
+	<!-- 尾部版权部分开始 -->
+	<div class="copyright">
+		<div class="copyright_top">
+			湖南信息学院 Copyright &copy;2019-2020.All Rights Reserved.
+		</div>
+		<div class="copyright_bottom">16物联网本一班毕业设计</div>
+	</div>
+	<!-- 尾部版权部分结束 -->	
+</body>
+</html>

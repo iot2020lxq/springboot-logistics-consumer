@@ -1,0 +1,87 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ly72b1');
+  src:  url('../fonts/icomoon.eot?ly72b1#iefix') format('embedded-opentype'),
+   		url('../fonts/icomoon.ttf?ly72b1') format('truetype'),
+   		url('../fonts/icomoon.woff?ly72b1') format('woff'),
+   	 	url('../fonts/icomoon.svg?ly72b1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+body{
+	background-color: #F2F2F2;
+}
+
+.bd{
+	background-color: #F2F2F2;
+	overflow: hidden;
+}
+
+.box{
+	width: 70%;
+	margin: 60px auto;
+	background-color: #fff;
+	/* height: 800px; */
+}
+.box>div{
+	padding-bottom: 30px;
+	padding-top: 20px;
+	padding-left: 60px;
+	box-sizing: border-box;
+	display: none;
+}
+
+.box>div.show{
+	display: block;
+}
+
+.box>span{
+	display: inline-block;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	font-weight: 700;
+	text-align: center;
+	cursor: pointer;
+	
+}
+.box>span.current{
+	border-bottom: 2px solid #f10215;
+	height: 48px;
+	color: #f10215;	
+}
+
+table{
+	margin: 10px auto; 
+	/* border: 1px solid red; */
+	background-color: #f6f6f6;
+	border-radius: 15px; 
+	display: inline-block; 
+	/* float: left; */
+}
+
+td{
+	color: #757575;
+	font-size: 14px;
+}
+td i{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	margin-right: 10px;
+	font: 14px icomoon;
+	cursor: pointer;
+}
+td a{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	margin-right: 10px;
+	font: 14px icomoon;
+	cursor: pointer;
+}

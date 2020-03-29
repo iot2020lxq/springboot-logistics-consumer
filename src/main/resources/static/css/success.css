@@ -1,0 +1,35 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?ly72b1');
+  src:  url('../fonts/icomoon.eot?ly72b1#iefix') format('embedded-opentype'),
+   		url('../fonts/icomoon.ttf?ly72b1') format('truetype'),
+   		url('../fonts/icomoon.woff?ly72b1') format('woff'),
+   	 	url('../fonts/icomoon.svg?ly72b1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+/* 完成订单 */
+.inner_form>a:hover{
+	background-color: #f10215;
+}
+
+.inner_form p {
+	display: block;
+	width: 300px;
+	height: 40px;
+	margin: 150px 245px;
+}
+
+.success i {
+	font: 36px icomoon;
+	color: #46E069;
+	font-weight: lighter;
+}
+.success a{
+	color: red;
+}
+.success a:hover{
+	text-decoration: underline;
+}

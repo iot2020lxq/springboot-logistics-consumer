@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>代取快递</title>
+<link rel="stylesheet" th:href="@{/css/base.css}">
+<link rel="stylesheet" th:href="@{/css/take.css}">
+</head>
+	<!-- 导航栏开始 -->
+	<div class="nav clearfix">
+		<a th:href="@{/index.html}" title="快递联盟" class="logo">快递联盟</a>
+		
+		<!-- 导航栏公共部分引入 -->
+		<div th:replace="~{common/nav::nav}"></div>	
+		
+		<!-- 道路导航栏登录部分 -->
+		<div th:replace="~{common/loginPart::isLogin}"></div>
+		<div th:replace="~{common/loginPart::noLogin}"></div>	
+	</div>
+	<!-- 导航栏结束 -->
+	
+	<!-- 快递代取content部分开始 -->
+	<div class="inner_box" id="box">
+		<p class="inner_header">
+			<span>快</span>
+			<span>递</span>
+			<span>代</span>
+			<span>取</span>
+		</p>
+		<div class="inner_content">
+			<ul class="content_ul" id="ul">
+				<li>
+					<p class="current_p">01</p>
+					<i  class="current_i"></i><br />
+					<span class="current_span">取件地址</span>
+				</li>
+				<li>
+					<p>02</p>
+					<i></i><br />
+					<span>我的地址</span>
+				</li>
+				<li>
+					<p>03</p>
+					<i></i><br />
+					<span>订单支付</span>
+				</li>
+				<li>
+					<p>04</p>
+					<i></i><br />
+					<span>支付完成</span>
+				</li>
+			</ul>
+			<div class="inner_form_box" id="box">
+				<div class="form_float" id="div_form">
+				<!-- 取货地址部分 -->
+				<form action="" class="inner_form" id="form_1">
+					<div>
+						<span>取货号</span><br />
+						<input type="text" placeholder="请输入您的取货号"  id="t_number">
+					</div>
+					<div>
+						<span>取货点</span><br />
+						<input type="text" placeholder="请输入取货地址" id="t_address">
+					</div>
+					<span>备注信息&nbsp;(时间、留言等)</span><br />
+					<textarea id="t_msg"></textarea>
+				</form>
+				
+				<!-- 我的地址部分 -->
+				<form action="" class="inner_form" id="form_2">
+					<div>
+						<span>姓名</span><br />
+						<input type="text" placeholder="请输入您的姓名" id="t_name">
+					</div>
+					<div>
+						<span>手机号码</span><br />
+						<input type="text" placeholder="请输入您的手机号" id="t_uNumber">
+					</div>
+					<div>
+						<span>学校</span><br />
+						<input type="text" placeholder="如湖南信息学院 / 新东方" id="t_street">
+					</div>
+					<div>
+						<span>详细地址</span><br />
+						<input type="text" placeholder="所在宿舍/门号" id="t_uAddress">
+					</div>	
+				</form>
+				
+				<!-- 支付订单部分 -->
+				<form action="" class="inner_form" id="form_3">		
+					<span style="color:#DD5145;font-weight: 700;font-size: 15px;margin-top: 80px;margin-left: 200px;">快递代取</span>&nbsp;&nbsp;&nbsp;
+					<span style="color: #000;font-size: 15px;font-weight: 700;" id="address"></span><br />
+					<span style="font-size: 14px;margin-top: 5px;margin-left: 200px;" id="name" ></span>&nbsp;&nbsp;&nbsp;
+					<span style="color:#2189FF;font-size: 14px;margin-top: 5px;" id="phone"></span><br />
+					<span style="font-size: 14px;margin-top: 5px;margin-left: 200px;" id="school"></span>
+					<span style="font-size: 14px;margin-top: 5px;" id="uAddress"></span><br />
+					<span style="font-size: 14px;margin-top: 5px;margin-left: 200px;">取货号</span>&nbsp;&nbsp;&nbsp;
+					<span style="font-size: 14px;margin-top: 5px;" id="number"></span><br />
+					
+					<div class="price">
+						<p class="p_1">*价格</p><br />
+						<p class="p_2">0.01&nbsp;</p><i></i>
+					</div>
+					<hr>
+					<a id="subMit" th:href="@{/takeToZhiFu}">去支付</a>
+					
+			
+					<script th:if="${biu} != null">
+						alert("您还没有登录！");
+					</script>
+				</form>
+				
+				<!-- 完成订单部分 -->
+				<form action="" class="inner_form" id="form_4" method="post">
+					<div>
+						<span>姓名</span><br />
+						<input type="text" placeholder="请输入您的姓名" name="username">
+					</div>
+					<div>
+						<span>手机号码</span><br />
+						<input type="text" placeholder="请输入您的手机号">
+					</div>
+					<div>
+						<span>街道</span><br />
+						<input type="text" placeholder="如湖南信息学院 / 新东方">
+					</div>
+					<div>
+						<span>详细地址</span><br />
+						<input type="text" placeholder="所在宿舍/门号">
+					</div>	
+					<a href="take.jsp">确定</a>	
+				</form>
+				</div>
+				<div class="btn_ current" id="btn_l">上一步</div>
+				<div class="btn" id="btn_r">下一步</div>
+			</div>
+		</div>	
+	</div>
+	<div class="red"></div>
+	<script th:src="@{/js/jquery-3.4.1.js}"></script>
+	<script th:src="@{/js/common.js}"></script>
+	<script th:src="@{/js/animate.js}"></script>
+	<script th:src="@{/js/take.js}"></script>
+	<!-- 快递代取content部分结束 -->
+	
+	
+	<!-- 尾部版权部分开始 -->
+	<div class="copyright">
+		<div class="copyright_top">
+			湖南信息学院 Copyright &copy;2019-2020.All Rights Reserved.
+		</div>
+		<div class="copyright_bottom">16物联网本一班毕业设计</div>
+	</div>
+	<!-- 尾部版权部分结束 -->	
+</body>
+</html>
